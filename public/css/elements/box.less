@@ -1,0 +1,53 @@
+// box.less
+
+.box {
+  .box-sizing(border-box);
+
+  margin: 0 0 @spacing;
+  padding: @spacing @spacing 0;
+
+  border: 1px solid @color-border;
+  border-radius: @radius;
+
+  > .content {
+    margin: -@spacing -@spacing @spacing;
+    padding: @spacing @spacing 0;
+
+    &.title {
+      border-bottom: 1px solid @color-border;
+    }
+  }
+
+  &.demo {
+    padding-top: @spacing*1.75;
+    *padding-top: @spacing;
+
+    position: relative;
+
+    background: @color-white;
+    border: 1px solid @color-border;
+    border-radius: @radius;
+
+    &:after {
+      content: 'Dæmi';
+      white-space: nowrap;
+
+      line-height: @spacing * 1.25;
+      padding: 0 @spacing/2;
+
+      position: absolute;
+      top: -1px;
+      left: -1px;
+
+      letter-spacing: 1px;
+      font-family: @font-family-mono;
+      // font-weight: 700;
+      // font-size: 12px;
+      color: @color-gray;
+
+      background: @color-secondary;
+      border: 1px solid @color-border;
+      border-radius: @radius 0 @radius 0;
+    }
+  }
+}

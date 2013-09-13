@@ -116,6 +116,11 @@ prettyPrint();
 
     resizeFix: function(){
       this.resizeSections();
+      $inner = $('.site-header').find('.inner')
+      var innerHeight = 0;
+          innerHeight = innerHeight + $inner.find('.logo').outerHeight(true);
+          innerHeight = innerHeight + $inner.find('.limit').outerHeight(true);
+      $inner.css('height',innerHeight);
     },
 
     scrollFix: function(){

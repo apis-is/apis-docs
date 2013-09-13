@@ -120,10 +120,16 @@ prettyPrint();
       var innerHeight = 0;
           innerHeight = innerHeight + $inner.find('.logo').outerHeight(true);
           innerHeight = innerHeight + $inner.find('.limit').outerHeight(true);
-      if(innerHeight >= $(window).height())
+      if(innerHeight >= $(window).height()) {
         $inner.css('height','auto');
-      else
+        if(!$inner.hasClass('relative'))
+          $inner.addClass('relative');
+      } else {
         $inner.css('height',innerHeight);
+
+        if($inner.hasClass('relative'))
+          $inner.removeClass('relative');
+      }
     },
 
     scrollFix: function(){

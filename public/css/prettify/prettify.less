@@ -39,6 +39,9 @@ pre.prettyprint {
   border: 1px solid #888;
   border-radius: @radius;
 
+  overflow-x: auto;
+  overflow-y: hidden;
+
   &.linenums {
   padding: @spacing 0;
   box-shadow: inset @spacing*2 0 0 fade(@color-black,15%);
@@ -53,6 +56,7 @@ ol.linenums {
   li {
     padding: 0 0 0 5px;
     line-height: @spacing;
+    white-space: pre;
   }
 
   // Alternate shading for lines

@@ -122,13 +122,8 @@ prettyPrint();
           innerHeight = innerHeight + $inner.find('.limit').outerHeight(true);
       if(innerHeight >= $(window).height()) {
         $inner.css('height','auto');
-        if(!$inner.hasClass('relative'))
-          $inner.addClass('relative');
       } else {
         $inner.css('height',innerHeight);
-
-        if($inner.hasClass('relative'))
-          $inner.removeClass('relative');
       }
     },
 

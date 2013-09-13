@@ -55,13 +55,18 @@ prettyPrint();
       var anchor = typeof $anchor !== 'undefined' && $anchor !== '' ? $anchor : false;
       if(!anchor) return;
 
-      $('html, body').stop().animate({
-        scrollTop: (anchor == "#top" ? 0 : $(anchor).offset().top)
-      }, 750, 'easeInOutExpo');
+      try {
+        $('html, body').stop().animate({
+          scrollTop: (anchor == "#top" ? 0 : $(anchor).offset().top)
+        }, 750, 'easeInOutExpo');
 
-      setTimeout($.proxy(function(){
+        setTimeout($.proxy(function(){
+          window.location.hash = anchor;
+        },this), 850);
+      } catch (e) {
         window.location.hash = anchor;
-      },this), 850);
+      }
+
     },
 
     processSections: function(){

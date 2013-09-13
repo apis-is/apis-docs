@@ -1,0 +1,33 @@
+
+.section {
+  .clearfix();
+  margin: 0 auto;
+
+  + .section {
+    border-top: 1px solid @color-primary;
+    padding-top: @spacing*2;
+    padding-bottom: @spacing;
+
+    &.light {
+      border-top-color: @color-dark;
+    }
+  }
+
+  &:first-child {
+    border-top: 2px solid @color-primary;
+    padding-top: @spacing*2;
+    padding-bottom: @spacing;
+  }
+
+  &.dark {
+    background: @color-dark;
+  }
+
+  &.light {
+    background: @color-light;
+  }
+
+  &.white {
+    background: @color-white;
+  }
+}

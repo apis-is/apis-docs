@@ -1,20 +1,27 @@
 // header.less
 
 .site-header {
-  margin: 0 auto @spacing;
+  margin: 0 auto;
   padding: 0;
 
-  border-bottom: 8px solid @color-primary;
-
-  @media only screen and (max-width: 568px) {
-    border-bottom-width: 4px;
-  }
+  position: relative;
 
   .logo {
-    line-height: 100px;
-    font-family: @font-family-special;
-    font-weight: 700;
-    font-size: 50px;
-    text-decoration: none;
+    padding: @spacing*2 0;
+    line-height: 90px;
+
+    text-align: center;
+
+    border-bottom: 2px solid @color-primary;
+  }
+
+  .inner {
+    margin: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }

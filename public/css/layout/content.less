@@ -1,16 +1,8 @@
 // content.less
 
 .site-content {
-}
-
-.section {
-  .clearfix();
-  margin: 0 auto @spacing;
-
-  + .section {
-    border-top: 1px solid @color-primary;
-    padding-top: @spacing;
-  }
+  position: relative;
+  z-index: 1;
 }
 
 .columns {
@@ -25,6 +17,11 @@
   }
 }
 
+.ath {
+  &:before {
+    content: 'ATH! ';
+  }
+}
 
 .hide{
   display: none;

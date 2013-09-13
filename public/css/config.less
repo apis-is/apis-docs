@@ -3,7 +3,7 @@
 // Sizes
 @spacing: 20px; // paragraph/heading
 @gutter: 40px; // gutter/padding
-@page-max-width: 1040px;
+@page-max-width: 700px;
 @page-min-width: 320px;
 @radius: 4px;
 
@@ -11,11 +11,17 @@
 @size-normal: 40px;
 @size-small: 32px;
 
+@break-mobile: ~"only screen and (max-width: 568px)";
+
+@trans-quick: 150ms;
+@trans-med: 250ms;
+@trans-slow: 500ms;
+
 // Typography
-@font-family: Arial, tahoma, sans-serif;
+@font-family: 'Open Sans', Arial, tahoma, sans-serif;
 @font-family-special: 'Open Sans', @font-family;
 @font-family-mono: 'Inconsolata', monospace;
-@font-size: 14px;
+@font-size: 18px;
 @font-color: #333;
 @line-height: 1.4em;
 
@@ -40,18 +46,21 @@
 @button-border-radius: @radius;
 
 // Grayscale
-@color-black: #000;
-@color-gray-darker: #222;
+@color-black: #111;
+@color-gray-darker: #333;
 @color-gray-dark: #555;
 @color-gray: #777;
 @color-gray-light: #aaa;
 @color-gray-lighter: #ddd;
-@color-white: #fff;
+@color-white: #eee;
 
 // Colors
-@color-red: #ee6969;
-@color-light: #ededeb;
-@color-dark: #333;
-@color-primary: @color-red;
-@color-secondary: @color-light;
-@color-border: #ccc;
+@color-blue: #268bd2;
+@color-light: #afc7c9;
+@color-dark: #002b36;
+
+@color-primary: @color-blue;
+@color-secondary: @color-dark;
+@color-tertiary: @color-light;
+
+@color-border: #ddd;

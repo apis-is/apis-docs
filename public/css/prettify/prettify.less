@@ -35,13 +35,12 @@
 pre.prettyprint {
   display: block;
   margin: 0 auto @spacing;
-  padding: 0;
+  padding: @spacing;
   border: 1px solid #888;
   border-radius: @radius;
 
   &.linenums {
-  -webkit-box-shadow: inset @spacing*2 0 0 fade(@color-black,15%);
-  -moz-box-shadow: inset @spacing*2 0 0 fade(@color-black,15%);
+  padding: @spacing 0;
   box-shadow: inset @spacing*2 0 0 fade(@color-black,15%);
   }
 }
@@ -53,7 +52,7 @@ ol.linenums {
 
   li {
     padding: 0 0 0 5px;
-    line-height: 20px;
+    line-height: @spacing;
   }
 
   // Alternate shading for lines

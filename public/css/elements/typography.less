@@ -3,19 +3,48 @@
 
 p {
   margin: 0 0 @spacing;
+
+  color: @color-light;
+
+  -webkit-font-smoothing: antialiased;
+
+  &.large {
+    font-size: 24px;
+  }
+
+  &.small {
+    font-size: 12px;
+  }
+
+  .light & {
+    color: @color-dark;
+  }
 }
 
 a {
-  .transition(color 150ms);
+  .transition(color @trans-quick, border @trans-med);
 
   cursor: pointer;
 
+  text-decoration: none;
   color: @color-primary;
+
+  border-bottom: 1px solid @color-secondary;
 
   &:hover,
   &:focus {
     color: darken(@color-primary,5%);
-    text-decoration: underline;
+    border-color: darken(@color-primary,5%);
+  }
+
+  .light & {
+    color: @color-dark;
+
+    &:hover,
+    &:focus {
+      color: lighten(@color-dark,15%);
+      border-color: lighten(@color-dark,15%);
+    }
   }
 }
 
@@ -24,20 +53,29 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 
   font-family: @font-family-special;
-  font-weight: 700;
-  line-height: 1em;
+  font-weight: 300;
+  line-height: 1.125em;
+
+  -webkit-font-smoothing: antialiased;
+
+  color: @color-light;
+
+  .light & {
+    color: @color-dark;
+  }
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 80px;
 }
 
 h2 {
-  font-size: 35px;
+  font-size: 40px;
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 35px;
+  font-weight: 400;
 }
 
 h4 {
@@ -62,6 +100,7 @@ hgroup {
 }
 
 dl {
+  -webkit-font-smoothing: antialiased;
   dt {
     font-weight: bold;
   }
@@ -70,6 +109,13 @@ dl {
 }
 
 ul {
+  -webkit-font-smoothing: antialiased;
+
+  color: @color-light;
+
+  .light & {
+    color: @color-dark;
+  }
 
   &.clean {
     .reset-list();
@@ -93,8 +139,14 @@ hr {
   }
 }
 
+b, strong {
+  font-weight: 600;
+}
+
 pre {
   font-family: @font-family-mono;
+
+  -webkit-font-smoothing: antialiased;
 }
 code {
   display: inline-block;
@@ -102,7 +154,13 @@ code {
 
   font-family: @font-family-mono;
 
-  background: @color-gray-lighter;
+  // background: @color-gray-lighter;
 
-  border: 1px dashed fade(@color-primary,20%);
+  border: 1px dashed fade(@color-light,50%);
+
+  -webkit-font-smoothing: antialiased;
+
+  .light & {
+    border-color: fade(@color-dark,50%);
+  }
 }

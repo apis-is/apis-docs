@@ -1,13 +1,20 @@
 // box.less
 
 .box {
+  .clearfix();
   .box-sizing(border-box);
 
   margin: 0 0 @spacing;
   padding: @spacing @spacing 0;
 
-  border: 1px solid @color-border;
   border-radius: @radius;
+
+  @media @break-mobile {
+    .padding > & {
+      margin-left: -@spacing;
+      margin-right: -@spacing;
+    }
+  }
 
   > .content {
     margin: -@spacing -@spacing @spacing;
@@ -18,18 +25,23 @@
     }
   }
 
+  &.light {
+    background: fade(@color-white,50%);
+  }
+
   &.demo {
     padding-top: @spacing*1.75;
     *padding-top: @spacing;
+    padding-bottom: @spacing;
 
     position: relative;
 
-    background: @color-white;
-    border: 1px solid @color-border;
-    border-radius: @radius;
+    >:last-child {
+      margin-bottom: 0;
+    }
 
     &:after {
-      content: 'Dæmi';
+      content: 'Dæmi' attr(data-type);
       white-space: nowrap;
 
       line-height: @spacing * 1.25;
@@ -41,13 +53,16 @@
 
       letter-spacing: 1px;
       font-family: @font-family-mono;
-      // font-weight: 700;
-      // font-size: 12px;
-      color: @color-gray;
+      font-weight: 400;
+      color: @color-white;
 
       background: @color-secondary;
-      border: 1px solid @color-border;
-      border-radius: @radius 0 @radius 0;
+      border-radius: 0 0 @radius 0;
+
+      .light & {
+        background: @color-light;
+        color: @color-dark;
+      }
     }
   }
 }

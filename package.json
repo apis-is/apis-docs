@@ -1,7 +1,7 @@
 {
   "name": "docs-apis-is",
   "port": "1337",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Benedikt Valdez <benediktvaldez@gmail.com>",
   "contributors": [
     "Davíð Örn <davideiriks@gmail.com>"

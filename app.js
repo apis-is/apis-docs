@@ -3,7 +3,6 @@ var express     = require('express'),
     http        = require('http'),
     less        = require('less'),
     mongoose    = require('mongoose'),
-    reload      = require('reload'),
     colors      = require('colors'),
     logo        = require('./config/logo.js');
 
@@ -43,7 +42,10 @@ mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb
 
 var server = http.createServer(app);
 
-if(env == 'development') reload(server,app,1500);
+if(env == 'development'){
+  reload = require('reload');
+  reload(server,app,1500);
+}
 
 server.listen(settings.port, function(){
   logo.long();

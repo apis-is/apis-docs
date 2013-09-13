@@ -109,32 +109,9 @@ prettyPrint();
     },
 
     onScroll: function(){
-      if(!this.browser.touch) {
-        var scrollEl = $('.section.title').find('.scroll');
-        var nameEl = $('.section.title').find('.name');
-
-        scrollEl.css({bottom: this.relativeToScroll(scrollEl.position(),true,1.5) * scrollEl.outerHeight()});
-        nameEl.css({opacity: 1 - this.relativeToScroll(scrollEl.position(),false,1.5)});
-      }
-
       if(this.doScrollfix !== false);
         clearTimeout(this.doScrollfix);
       this.doScrollfix = setTimeout($.proxy(this.scrollFix,this), 200);
-    },
-
-    relativeToScroll: function($elPosition,$reverse,$offset){
-      var elPosition = typeof $elPosition !== 'undefined' && $elPosition !== '' ? $elPosition : false;
-      var reverse = typeof $reverse !== 'undefined' && $reverse !== '' ? $reverse : false;
-      var offset = typeof $offset !== 'undefined' && $offset !== '' ? $offset : false;
-      if(!elPosition) return 0;
-
-      var currentLocation = $(window).scrollTop();
-
-      var value = (currentLocation / elPosition.top);
-      var value = offset ? offset * value : value;
-      var value = reverse ? -1 * value : value;
-
-      return value;
     },
 
     resizeFix: function(){

@@ -55,8 +55,6 @@ server.listen(settings.port, function(){
         title: pkg.name,
         subtitle: 'v' + pkg.version,
         message: 'Successfully started on port ' + settings.port
-    },function(){
-      console.log(' -Terminal notifier notified');
     });
   }
 });

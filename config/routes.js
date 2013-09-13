@@ -8,12 +8,6 @@ module.exports = function(app) {
     });
   });
 
-  app.get('/elements', function(req, res) {
-    res.render('elements', {
-      title: 'All elements'
-    });
-  });
-
   /*
    * Errors
    */

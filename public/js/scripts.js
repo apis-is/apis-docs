@@ -85,7 +85,7 @@ prettyPrint();
         var fullHeight = $(window).height();
 
         if(type == 'full') {
-          $(section).css('height',fullHeight);
+          $(section).css('min-height',fullHeight);
         } else if (type == 'half') {
           $(section).css('min-height',fullHeight/2);
         } else if (type == 'third') {

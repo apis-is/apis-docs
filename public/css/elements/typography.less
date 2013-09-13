@@ -28,7 +28,6 @@ a {
 
   text-decoration: none;
   color: @color-primary;
-
   border-bottom: 1px solid @color-secondary;
 
   &:hover,
@@ -39,6 +38,7 @@ a {
 
   .light & {
     color: @color-dark;
+    border-color: @color-light;
 
     &:hover,
     &:focus {
@@ -156,11 +156,15 @@ code {
 
   // background: @color-gray-lighter;
 
-  border: 1px dashed fade(@color-light,50%);
+  *border: 1px dashed fade(@color-light,50%);
+
+  box-shadow: inset 0 0 1px fade(@color-light,50%);
 
   -webkit-font-smoothing: antialiased;
 
   .light & {
-    border-color: fade(@color-dark,50%);
+    *border-color: fade(@color-dark,50%);
+
+    box-shadow: inset 0 0 1px fade(@color-dark,50%);
   }
 }

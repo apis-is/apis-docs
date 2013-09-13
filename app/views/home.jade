@@ -1,9 +1,13 @@
 extends layouts/default
 
 block header
-  .limit.padding
-    .logo=title
+  include home/welcome
 
 block content
-  .limit.padding
-    p Home
+  include home/versions
+
+  include apis/car
+  include apis/flight
+  include apis/company
+  include apis/currency
+  include apis/bus

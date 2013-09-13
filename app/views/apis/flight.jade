@@ -1,0 +1,35 @@
+section.section.light.endpoint#endpoint-flight
+  .limit.padding
+    hgroup
+      h3 Flug
+      h4 Fá lista yfir flug til og frá landinu
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/flight?language=en&type=departures' -H 'Content-Type: application/json'
+      p.ath <strong>language</strong> getur verið "en" eða "is"
+      p.ath <strong>type</strong> getur verið "departures" eða "arrivals"
+      pre.prettyprint.linenums
+        | {
+        |     "results": [
+        |         {
+        |             "date": "26. Jan",
+        |             "flightNumber": "FI671",
+        |             "to": "Denver Intl",
+        |             "plannedArrival": "17:00",
+        |             "realArrival": "17:23",
+        |             "status": "Departed 17:12"
+        |         },
+        |         {
+        |             "date": "26. Jan",
+        |             "flightNumber": "FI615",
+        |             "to": "New York JFK",
+        |             "plannedArrival": "17:05",
+        |             "realArrival": "17:26",
+        |             "status": "Departed 17:17"
+        |         }
+        |     ]
+        | }
+
+
+

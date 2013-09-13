@@ -1,0 +1,10 @@
+section.section.dark#versions
+  .limit.padding.text-center
+    h2  Upplýsingar um útgáfur endapunkta
+    p Allir endapunktar eru í <strong>útgáfu 1</strong> og því óþarfi að senda <code>accept-version</code> header.
+    p Þegar endapunktarnir eru uppfærðir er tilgreint í hverjum endapunkti fyrir sig hvaða útgáfa er nýjust og hvort einhverjar breytingar hafi orðið á virkni.
+    p Hér má sjá <code>curl</code> dæmi (<a href="https://httpkit.com/resources/HTTP-from-the-Command-Line/" target="_blank">hvað er curl?</a>) með <code>accept-version</code> header:
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/currency/arion' -H 'accept-version:1' -H 'Content-type: application/json'

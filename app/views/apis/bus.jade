@@ -1,0 +1,58 @@
+section.section.light.endpoint#endpoint-bus
+  .limit.padding
+    hgroup
+      h3 Strætó
+      h4 Leit að leiðum milli tveggja staða
+    p Þessum endapunkti hefur verið lokað tímabundið vegna breytinga á síðu bus.is
+    h4 Rauntímastaðsetningar strætóa
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/bus/realtime?busses=1,5' -H 'Content-Type: application/json'
+      p.ath Ef <strong>busses</strong> er ekki sent með þá koma rauntímastaðsetningar allra strætóa.
+      p.ath Ekki eru sýndar niðurstöður fyrir strætóa sem eru ekki í umferð .
+      pre.prettyprint.linenums
+        | {
+        |     "results": [
+        |         {
+        |             "busNr": "1",
+        |             "busses": [
+        |                 {
+        |                     "unixTime": 1354618575,
+        |                     "x": 64.090668,
+        |                     "y": -21.92904,
+        |                     "from": "Hlemmur",
+        |                     "to": "Klukkuvellir"
+        |                 },
+        |                 {
+        |                     "unixTime": 1354618575,
+        |                     "x": 64.086315,
+        |                     "y": -21.937813,
+        |                     "from": "Klukkuvellir",
+        |                     "to": "Hlemmur"
+        |                 }
+        |             ]
+        |         },
+        |         {
+        |             "busNr": "5",
+        |             "busses": [
+        |                 {
+        |                     "unixTime": 1354618563,
+        |                     "x": 64.135644,
+        |                     "y": -21.850126,
+        |                     "from": "Hlemmur",
+        |                     "to": "Elliðabraut / Árvað"
+        |                 },
+        |                 {
+        |                     "unixTime": 1354618577,
+        |                     "x": 64.143989,
+        |                     "y": -21.913048,
+        |                     "from": "Elliðabraut / Árvað",
+        |                     "to": "Hlemmur"
+        |                 }
+        |             ]
+        |         }
+        |     ]
+        | }
+
+

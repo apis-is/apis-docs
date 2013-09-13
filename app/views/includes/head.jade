@@ -4,37 +4,39 @@ head
   meta(name="viewport", content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no")
 
   title= title
-  meta(http-equiv="Content-type", content="text/html;charset=UTF-8")
-  meta(name="keywords", content=keywords)
-  meta(name="description", content=description)
+  //- meta(http-equiv="Content-type", content="text/html;charset=UTF-8")
+  if(keywords)
+    meta(name="keywords", content=keywords)
+  if(description)
+    meta(name="description", content=description)
 
-  link(href="/favicon.ico", rel="icon", type="image/x-icon")
-  link(href='/favicon.ico', rel='shortcut icon', type='image/vnd.microsoft.icon')
+  //- link(href="/favicon.ico", rel="icon", type="image/x-icon")
+  //- link(href='/favicon.ico', rel='shortcut icon', type='image/vnd.microsoft.icon')
 
   //- Retina >= iOS 7
-  link(rel="apple-touch-icon-precomposed", sizes="152x152", href="/ico/apple-touch-icon-precomposed-152.png")
-  link(rel="apple-touch-icon-precomposed", sizes="120x120", href="/ico/apple-touch-icon-precomposed-120.png")
+  //- link(rel="apple-touch-icon-precomposed", sizes="152x152", href="/ico/apple-touch-icon-precomposed-152.png")
+  //- link(rel="apple-touch-icon-precomposed", sizes="120x120", href="/ico/apple-touch-icon-precomposed-120.png")
   //- Retina <= iOS 6
-  link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/ico/apple-touch-icon-precomposed-144.png")
-  link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/ico/apple-touch-icon-precomposed-114.png")
+  //- link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/ico/apple-touch-icon-precomposed-144.png")
+  //- link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/ico/apple-touch-icon-precomposed-114.png")
   //- Non-retina
-  link(rel="apple-touch-icon-precomposed", sizes="72x72",   href="/ico/apple-touch-icon-precomposed-72.png")
-  link(rel="apple-touch-icon-precomposed",                  href="/ico/apple-touch-icon-precomposed-57.png")
+  //- link(rel="apple-touch-icon-precomposed", sizes="72x72",   href="/ico/apple-touch-icon-precomposed-72.png")
+  //- link(rel="apple-touch-icon-precomposed",                  href="/ico/apple-touch-icon-precomposed-57.png")
 
   //- Windows Pinned site
-  meta(name="application-name", content=title)
+  //- meta(name="application-name", content=title)
   //- Appears when you hover over the pinned site shortcut
-  meta(name="msapplication-tooltip", content="Tooltip text on hover")
+  //- meta(name="msapplication-tooltip", content="Tooltip text on hover")
   //- Root url of the application
-  meta(name="msapplication-starturl", content="./")
+  //- meta(name="msapplication-starturl", content="./")
   //- Pinned site window size
-  meta(name="msapplication-window", content="width:1200;height:768")
+  //- meta(name="msapplication-window", content="width:1200;height:768")
   //- Color of back/fwd buttins in pinned site browser window
-  meta(name="msapplication-navbutton-color", content="#ff3300")
+  //- meta(name="msapplication-navbutton-color", content="#ff3300")
 
   //- Windows 8 tiles
-  meta(name="msapplication-TileImage", content="/ico/msapplication-TileImage-144.png")
-  meta(name="msapplication-TileColor", content="#00ff00")
+  //- meta(name="msapplication-TileImage", content="/ico/msapplication-TileImage-144.png")
+  //- meta(name="msapplication-TileColor", content="#00ff00")
 
-  link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,400italic|Inconsolata:400,700'")
+  link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Inconsolata:400,700'")
   != css("main")

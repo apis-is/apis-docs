@@ -1,0 +1,30 @@
+section.section.light.endpoint#endpoint-car
+  .limit.padding
+    hgroup
+      h3 Bílnúmer
+      h4 Leit í ökutækjaskrá
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/car?number=1337' -H 'Content-Type: application/json'
+      p.ath <strong>number</strong> getur verið skráningarnúmer, fastanúmer eða verksmiðjunúmer.
+      pre.prettyprint.linenums
+        | {
+        |     "results": [
+        |         {
+        |             "registryNumber": "AA031",
+        |             "number": "AA031",
+        |             "factoryNumber": "VF37ENFZE32286866",
+        |             "type": "PEUGEOT",
+        |             "subType": "306",
+        |             "color": "Blár",
+        |             "registeredAt": "26.02.1998",
+        |             "status": "Í lagi",
+        |             "nextCheck": "01.01.2013",
+        |             "pollution": "",
+        |             "weight": "1120"
+        |         }
+        |     ]
+        | }
+
+

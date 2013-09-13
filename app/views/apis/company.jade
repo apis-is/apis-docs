@@ -1,0 +1,27 @@
+section.section.light.endpoint#endpoint-company
+  .limit.padding
+    hgroup
+      h3 Fyrirtæki
+      h4 Leit út frá nafni, heimilisfangi, kennitölu eða VSK-númeri
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/company?name=hagar' -H 'Content-Type: application/json'
+      pre.prettyprint
+        | curl -X GET 'apis.is/company?address=Hagasmára' -H 'Content-Type: application/json'
+      pre.prettyprint
+        | curl -X GET 'apis.is/company?socialnumber=4307003590' -H 'Content-Type: application/json'
+      pre.prettyprint
+        | curl -X GET 'apis.is/company?vsknr=12345' -H 'Content-Type: application/json'
+
+      pre.prettyprint.linenums
+        | {
+        |     "results": [
+        |         {
+        |             "name": "Nafn fyrirtækis",
+        |             "sn": "Kennitala",
+        |             "active": 1,
+        |             "address": "Heimilisfang"
+        |         }
+        |     ]
+        | }

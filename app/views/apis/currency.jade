@@ -1,0 +1,37 @@
+section.section.light.endpoint#endpoint-currency
+  .limit.padding
+    hgroup
+      h3 Gjaldmiðlar
+      h4 Fá upplýsingar um gjaldmiðla frá m5.is, arion eða landsbankanum
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/currency/m5' -H 'Content-Type: application/json'
+      pre.prettyprint
+        | curl -X GET 'apis.is/currency/arion' -H 'Content-Type: application/json'
+      pre.prettyprint
+        | curl -X GET 'apis.is/currency/lb' -H 'Content-Type: application/json'
+
+      pre.prettyprint.linenums
+        | {
+        |     "results": [
+        |         {
+        |             "shortName": "USD",
+        |             "longName": "Bandarískur dalur",
+        |             "value": 126.185,
+        |             "askValue": 126.56,
+        |             "bidValue": 125.81,
+        |             "changeCur": -0.0395,
+        |             "changePer": 0
+        |         },
+        |         {
+        |             "shortName": "GBP",
+        |             "longName": "Sterlingspund",
+        |             "value": 201.855,
+        |             "askValue": 202.46,
+        |             "bidValue": 201.25,
+        |             "changeCur": -0.19719,
+        |             "changePer": 0
+        |         }
+        |     ]
+        | }

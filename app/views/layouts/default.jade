@@ -16,10 +16,9 @@ html(class="no-js")
           block content
         footer.site-footer
           block footer
-            p &copy; 2013
 
     script(src="/reload/reload.js")
+    != js("libs/jquery-2.0.3.min")
     != js("prettify/prettify.min")
-    script.
-      prettyPrint();
+    != js("scripts")
 

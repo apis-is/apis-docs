@@ -2,7 +2,7 @@
 var express     = require('express'),
     http        = require('http'),
     less        = require('less'),
-    mongoose    = require('mongoose'),
+    // mongoose    = require('mongoose'),
     colors      = require('colors'),
     logo        = require('./config/logo.js');
 
@@ -37,7 +37,7 @@ require('./app/models/restaurants.js')(app);
 // require('./app/models/index.js')(app);
 
 // -- Mongo DB connection
-mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/funso');
+// mongoose.connect(process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/funso');
 
 
 var server = http.createServer(app);

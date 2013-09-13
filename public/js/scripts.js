@@ -120,7 +120,7 @@ prettyPrint();
       var innerHeight = 0;
           innerHeight = innerHeight + $inner.find('.logo').outerHeight(true);
           innerHeight = innerHeight + $inner.find('.limit').outerHeight(true);
-      if(innerHeight <= $(window).height())
+      if(innerHeight >= $(window).height())
         $inner.css('height','auto');
       else
         $inner.css('height',innerHeight);

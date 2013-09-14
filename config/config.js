@@ -4,7 +4,7 @@ pkg = require('../package.json')
 var settings = {
     'siteName' : pkg.name,
     'uri' : 'http://localhost', // Without trailing /
-    'port' : process.env.PORT || pkg.port || 8080,
+    'port' : process.env.PORT || 1337,
     'debug' : 0,
     'profile' : 0
 };

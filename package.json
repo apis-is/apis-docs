@@ -1,10 +1,19 @@
 {
   "name": "docs-apis-is",
-  "port": "1337",
   "version": "1.0.0",
-  "author": "Benedikt Valdez <benediktvaldez@gmail.com>",
+  "author": {
+    "name": "Benedikt Valdez",
+    "email": "benediktvaldez@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kristjanmik/apis-docs.git"
+  },
   "contributors": [
-    "Davíð Örn <davideiriks@gmail.com>"
+    {
+      "name": "Davíð Örn Eiriksson",
+      "email": "<davideiriks@gmail.com>"
+    }
   ],
   "dependencies": {
     "express": "~3.3.8",

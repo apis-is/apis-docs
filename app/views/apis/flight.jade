@@ -1,14 +1,14 @@
 section.section.dark.endpoint#endpoint-flight
   .limit.padding
     hgroup
-      h3 Flug
-      h4 Fá lista yfir flug til og frá landinu
+      h3 Flight
+      h4 Get list of international flights departing and arriving at KEF airport.
   .limit.padding.wide
     .box.light.demo
       pre.prettyprint
         | curl -X GET 'apis.is/flight?language=en&type=departures' -H 'Content-Type: application/json'
-      p.ath <strong>language</strong> getur verið "en" eða "is"
-      p.ath <strong>type</strong> getur verið "departures" eða "arrivals"
+      p.nb <strong>language</strong> can be "en" or "is"
+      p.nb <strong>type</strong> can be "departures" or "arrivals"
       pre.prettyprint.linenums
         | {
         |     "results": [

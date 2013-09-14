@@ -1,10 +1,11 @@
 section.section.dark.endpoint#endpoint-currency
   .limit.padding
     hgroup
-      h3 Gjaldmiðlar
-      h4 Fá upplýsingar um gjaldmiðla frá m5.is, arion eða landsbankanum
+      h3 Currency
+      h4 Get currency data from <a href="http://m5.is" target="_blank">m5.is</a>, <a href="http://arionbanki.is/" target="_blank">Arion banki</a> or <a href="http://landsbankinn.is" target="_blank">Landsbankinn</a>
   .limit.padding.wide
     .box.light.demo
+      p.nb All values are in ISK
       pre.prettyprint
         | curl -X GET 'apis.is/currency/m5' -H 'Content-Type: application/json'
       pre.prettyprint

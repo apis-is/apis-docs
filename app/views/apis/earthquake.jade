@@ -1,0 +1,23 @@
+section.section.dark.endpoint#endpoint-earthquake
+  .limit.padding
+    hgroup
+      h3 Eartquakes in Iceland
+      h4 Get monitoring data
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/earthquake/is' -H 'Content-Type: application/json'
+      pre.prettyprint.linenums
+        | {
+        |   "results": [
+        |     {
+        |       "timestamp": "2013-09-13T22:55:57.000Z",
+        |       "latitude": 66.239,
+        |       "longitude": -16.799,
+        |       "depth": 5.3,
+        |       "size": 1.1,
+        |       "quality": 40.78,
+        |       "humanReadableLocation": "17,0 km VSV af Kópaskeri"
+        |     }
+        |   ]
+        | }

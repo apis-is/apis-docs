@@ -1,0 +1,25 @@
+section.section.dark.endpoint#endpoint-lottery
+  .limit.padding
+    hgroup
+      h3 Icelandic lottery
+      h4 Get lottery numbers for Lotto, Vikingalotto or Eurojackpot
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/lottery' -H 'Content-Type: application/json'
+      pre.prettyprint
+        | curl -X GET 'apis.is/lottery/vikingalotto' -H 'Content-Type: application/json'
+      pre.prettyprint
+        | curl -X GET 'apis.is/lottery/eurojackpot' -H 'Content-Type: application/json'
+      pre.prettyprint.linenums
+        | {
+        |   "results": [
+        |     {
+        |       "date": "07.09.2013",
+        |       "lotto": "10 15 34 35 39 (27)",
+        |       "joker": "6 5 1 7 4",
+        |       "prize": "13.287.850 kr.",
+        |       "link": "http://lotto.is/lottoleikir/urslit/lotto?_date=07.09.2013"
+        |     }
+        |   ]
+        | }

@@ -1,16 +1,14 @@
 section.section.dark.endpoint#endpoint-bus
   .limit.padding
     hgroup
-      h3 Strætó
-      h4 Leit að leiðum milli tveggja staða
-    p Þessum endapunkti hefur verið lokað tímabundið vegna breytinga á síðu bus.is
-    h4 Rauntímastaðsetningar strætóa
+      h3 Icelandic Bus System
+      h4 Real-time location of busses
   .limit.padding.wide
     .box.light.demo
       pre.prettyprint
         | curl -X GET 'apis.is/bus/realtime?busses=1,5' -H 'Content-Type: application/json'
-      p.ath Ef <strong>busses</strong> er ekki sent með þá koma rauntímastaðsetningar allra strætóa.
-      p.ath Ekki eru sýndar niðurstöður fyrir strætóa sem eru ekki í umferð .
+      p.nb If <code>busses</code> is not declared, the endpoint will return real-time location of all available busses.
+      p.nb Results are only shown for active busses.
       pre.prettyprint.linenums
         | {
         |     "results": [

@@ -1,0 +1,22 @@
+section.section.dark.endpoint#endpoint-weather
+  .limit.padding
+    hgroup
+      h3 Icelandic Weather
+      h4 Get weather forecast from the Icelandic Meteorological Office
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/weather' -H 'Content-Type: application/json'
+      pre.prettyprint.linenums
+        | {
+        |   "results": [
+        |     {
+        |       "info": "This is an api for Icelandic weather reports and observations",
+        |       "endpoints": {
+        |         "forecasts": "/weather/forecasts/",
+        |         "observations": "/weather/observations/",
+        |         "texts": "/weather/texts/"
+        |       }
+        |     }
+        |   ]
+        | }

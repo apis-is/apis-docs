@@ -1,0 +1,63 @@
+section.section.dark.endpoint#endpoint-cinema
+  .limit.padding
+    hgroup
+      h3 Icelandic cinema
+      h4 Sort by movies or theaters
+  .limit.padding.wide
+    .box.light.demo
+      pre.prettyprint
+        | curl -X GET 'apis.is/cinema' -H 'Content-Type: application/json'
+      pre.prettyprint.linenums
+        | {
+        |   "results": [
+        |     {
+        |       "title": "jOBS",
+        |       "released": "2013",
+        |       "restricted": "12 ára",
+        |       "imdb": "5.5/10  9,907 atkv.",
+        |       "image": "http://kvikmyndir.is/images/poster/8497_500.jpg",
+        |       "showtimes": [
+        |         {
+        |           "theater": "Borgarbíó",
+        |           "schedule": [
+        |             "22:00"
+        |           ]
+        |         },
+        |         {
+        |           "theater": "Laugarásbíó",
+        |           "schedule": [
+        |             "20:00",
+        |             "22:10"
+        |           ]
+        |         }
+        |       ]
+        |     }
+        |   ]
+        | }
+      pre.prettyprint
+        | curl -X GET 'apis.is/cinema/theaters' -H 'Content-Type: application/json'
+      pre.prettyprint.linenums
+        | {
+        |   "name": "Laugarásbíó",
+        |   "location": "Laugarási",
+        |   "image": "http://kvikmyndir.is/images/biohus_biosida/laugarasbio.jpg",
+        |   "movies": [
+        |     {
+        |       "title": "Despicable Me 2",
+        |       "schedule": [
+        |         "16:00 (2D )",
+        |         "16:00 (3D )",
+        |         "18:00 (3D )",
+        |         "18:00 (2D )",
+        |         "20:00 (2D )"
+        |       ]
+        |     },
+        |     {
+        |       "title": "jOBS",
+        |       "schedule": [
+        |         "20:00",
+        |         "22:10"
+        |       ]
+        |     }
+        |   ]
+        | },

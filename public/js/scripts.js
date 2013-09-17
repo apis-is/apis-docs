@@ -49,6 +49,14 @@ prettyPrint();
 
         return false;
       },this));
+
+      $('.collapse-next:not(.open)').next().hide();
+      $('.collapse-next').on('click',$.proxy(function(e){
+        $(e.target).toggleClass('open').next().slideToggle(this.settings.animationDuration)
+
+        e.preventDefault();
+        return false;
+      },this))
     },
 
     goToAnchor: function($anchor){

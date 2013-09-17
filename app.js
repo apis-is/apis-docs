@@ -33,7 +33,6 @@ require('./bootstrap.js').boot(app);
 require('./config/routes.js')(app);
 
 // -- Models
-require('./app/models/restaurants.js')(app);
 // require('./app/models/index.js')(app);
 
 // -- Mongo DB connection

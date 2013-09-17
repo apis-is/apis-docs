@@ -7,6 +7,8 @@
   margin: 0 0 @spacing;
   padding: @spacing @spacing 0;
 
+  position: relative;
+
   border-radius: @radius;
 
   @media @break-mobile {
@@ -21,20 +23,66 @@
     padding: @spacing @spacing 0;
 
     &.title {
-      border-bottom: 1px solid @color-border;
+      padding: 0;
+      line-height: @spacing*2;
+      border-radius: @radius @radius 0 0;
+      border-bottom: 2px solid @color-dark;
+
+      &.blue {
+        background: @color-blue;
+        color: @color-white;
+      }
     }
   }
 
   &.light {
-    background: fade(@color-white,50%);
+    // background: fade(@color-white,50%);
+    background: @color-light;
+  }
+
+  &.api {
+
+    .content {
+
+      &.title {
+        .clearfix();
+
+        .method,
+        .path {
+        }
+
+        .method {
+          .user-select(none);
+          cursor: default;
+          float: left;
+          width: @spacing*4;
+          border-right: 2px solid @color-dark;
+
+          font-family: @font-family-mono;
+          font-size: 16px;
+          letter-spacing: 1px;
+          text-align: center;
+          text-transform: uppercase;
+
+          &.long {
+            width: @spacing*6;
+          }
+        }
+        .path {
+          float: left;
+          padding-left: @spacing;
+          font-family: @font-family-mono;
+          font-size: 16px;
+
+          >a {
+          }
+        }
+      }
+    }
   }
 
   &.demo {
-    padding-top: @spacing*1.75;
-    *padding-top: @spacing;
     padding-bottom: @spacing;
-
-    position: relative;
 
     >:last-child {
       margin-bottom: 0;
@@ -44,11 +92,11 @@
       content: 'Example' attr(data-type);
       white-space: nowrap;
 
-      line-height: @spacing * 1.25;
+      line-height: @spacing * 1;
       padding: 0 @spacing/2;
 
       position: absolute;
-      top: -1px;
+      top: -@spacing * .3;
       left: -1px;
 
       letter-spacing: 1px;

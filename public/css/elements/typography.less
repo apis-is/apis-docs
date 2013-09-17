@@ -22,28 +22,38 @@ p {
 }
 
 a {
-  .transition(color @trans-quick, border @trans-med);
+  .transition(color @trans-quick, border @trans-quick);
 
   cursor: pointer;
 
   text-decoration: none;
-  color: @color-primary;
-  border-bottom: 1px solid @color-secondary;
+  font-weight: 400;
+  color: @color-blue;
+  border-bottom: 1px solid @color-dark;
 
   &:hover,
   &:focus {
-    color: darken(@color-primary,5%);
-    border-color: darken(@color-primary,5%);
+    color: darken(@color-blue,5%);
+    border-color: darken(@color-blue,5%);
   }
 
   .light & {
-    color: @color-dark;
     border-color: @color-light;
 
     &:hover,
     &:focus {
-      color: lighten(@color-dark,15%);
-      border-color: lighten(@color-dark,15%);
+      border-color: darken(@color-blue,5%);
+    }
+  }
+
+  .blue & {
+    color: @color-white;
+    border-color: @color-blue;
+
+    &:hover,
+    &:focus {
+      color: @color-white;
+      border-color: @color-white;
     }
   }
 }
@@ -60,8 +70,102 @@ h1, h2, h3, h4, h5, h6 {
 
   color: @color-light;
 
+  @media @break-mobile {
+    text-align: center;
+  }
+
+  &.leading {
+    .user-select(none);
+    cursor: default;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      margin-left: @spacing/2;
+      vertical-align: 26%;
+      background: @color-blue;
+    }
+
+    &.collapse-next {
+      position: relative;
+      cursor: pointer;
+
+      + *{
+        margin-top: -@spacing/2;
+      }
+
+      &:before {
+        .icon();
+        content: 'down';
+
+        padding-right: @spacing/4;
+
+        text-align: right;
+
+        background: @color-light;
+      }
+
+      &.open {
+        &:before {
+          content: 'up';
+        }
+      }
+    }
+  }
+
+  &.strikethrough {
+    .user-select(none);
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 1px;
+    line-height: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: 0.4em;
+
+    span {
+      position: relative;
+      display: inline-block;
+      top: -0.4em;
+      margin: 0 @spacing;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: table-cell;
+      width: 50%;
+      height: 1px;
+      vertical-align: 25%;
+      border-top: 1px solid @color-blue;
+    }
+    &:before {
+      margin-right: 8px;
+    }
+    &:after {
+      margin-left: 8px;
+    }
+  }
+
   .light & {
     color: @color-dark;
+
+    &.leading:after {
+      background: @color-dark;
+    }
+    &.strikethrough {
+      &:before,
+      &:after {
+        border-color: @color-dark;
+      }
+    }
   }
 }
 
@@ -70,17 +174,16 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 h3 {
   font-size: 35px;
-  font-weight: 400;
 }
 
 h4 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 h5 {
@@ -100,11 +203,52 @@ hgroup {
 }
 
 dl {
+  .clearfix();
   -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+
   dt {
+    clear: both;
+    float: left;
+    margin: 0 0 @spacing/2;
+    width: 100%*.25;
+
+    letter-spacing: 1px;
+    font-family: @font-family-mono;
     font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    &:after {
+      font-family: @font-family-mono;
+      font-weight: 400;
+      // font-size: 0.8em;
+    }
+
+    &.req,
+    &.required {
+      position: relative;
+      &:after {
+        content: ' (required) ';
+      }
+    }
   }
   dd {
+    float: left;
+    width: 100%*.75;
+    margin: 0 0 @spacing/2;
+  }
+
+  @media @break-mobile {
+    dt {
+      margin: 0;
+    }
+    dt,
+    dd {
+      float: none;
+      width: 100%;
+    }
   }
 }
 
@@ -130,9 +274,13 @@ hr {
   outline: 0;
 
   .clearfix;
-  margin: @spacing 0;
+  margin: @spacing auto;
   height: 1px;
-  border-top: 1px solid @color-border;
+  border-top: 1px solid @color-blue;
+
+  &.short {
+    width: 75%;
+  }
 
   &.dotline {
     border-top-style: dashed;

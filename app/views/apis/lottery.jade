@@ -3,23 +3,103 @@ section.section.dark.endpoint#endpoint-lottery
     hgroup
       h3 Icelandic lottery
       h4 Get lottery numbers for Lotto, Vikingalotto or Eurojackpot
-  .limit.padding.wide
-    .box.light.demo
-      pre.prettyprint
-        | curl -X GET 'apis.is/lottery' -H 'Content-Type: application/json'
-      pre.prettyprint
-        | curl -X GET 'apis.is/lottery/vikingalotto' -H 'Content-Type: application/json'
-      pre.prettyprint
-        | curl -X GET 'apis.is/lottery/eurojackpot' -H 'Content-Type: application/json'
-      pre.prettyprint.linenums
-        | {
-        |   "results": [
-        |     {
-        |       "date": "07.09.2013",
-        |       "lotto": "10 15 34 35 39 (27)",
-        |       "joker": "6 5 1 7 4",
-        |       "prize": "13.287.850 kr.",
-        |       "link": "http://lotto.is/lottoleikir/urslit/lotto?_date=07.09.2013"
-        |     }
-        |   ]
-        | }
+
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/lottery", target="_blank") /lottery
+
+      .content
+        p Get the most recent numbers for the icelandic lottery.
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/lottery' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "date": "14.09.2013",
+                "lotto": "13 14 28 37 39 (29)",
+                "joker": "0 7 6 6 9",
+                "prize": "6.091.360 kr.",
+                "link": "http://lotto.is/lottoleikir/urslit/lotto?_date=14.09.2013"
+              },
+              {
+                "date": "07.09.2013",
+                "lotto": "10 15 34 35 39 (27)",
+                "joker": "6 5 1 7 4",
+                "prize": "13.287.850 kr.",
+                "link": "http://lotto.is/lottoleikir/urslit/lotto?_date=07.09.2013"
+              }
+            ]
+          }
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/lottery/vikingalotto", target="_blank") /lottery/vikingalotto
+
+      .content
+        p Get the most recent numbers for Vikingalotto.
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/lottery/vikingalotto' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "date": "11.09.2013",
+                "lotto": "3 8 25 32 34 45 20 22 (27)",
+                "joker": "2 2 0 4 0",
+                "prize": "316.866.390 kr.",
+                "link": "http://lotto.is/lottoleikir/urslit/vikingalotto?_date=11.09.2013"
+              },
+              {
+                "date": "04.09.2013",
+                "lotto": "8 12 13 14 33 47 27 48 (3)",
+                "joker": "9 5 8 0 1",
+                "prize": "206.822.330 kr.",
+                "link": "http://lotto.is/lottoleikir/urslit/vikingalotto?_date=04.09.2013"
+              }
+            ]
+          }
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/lottery/eurojackpot", target="_blank") /lottery/eurojackpot
+
+      .content
+        p Get the most recent numbers for EuroJackpot
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/lottery/eurojackpot' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "date": "13.09.2013",
+                "lotto": "3 10 18 31 43 1 (7)",
+                "joker": "1 8 3 1 3",
+                "prize": "2.456.318.720 kr.",
+                "link": "http://lotto.is/lottoleikir/urslit/eurojackpot?_date=13.09.2013"
+              },
+              {
+                "date": "06.09.2013",
+                "lotto": "3 7 20 32 44 4 (5)",
+                "joker": "0 5 5 5 8",
+                "prize": "2.137.751.150 kr.",
+                "link": "http://lotto.is/lottoleikir/urslit/eurojackpot?_date=06.09.2013"
+              }
+            ]
+          }

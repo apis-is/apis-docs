@@ -2,62 +2,85 @@ section.section.dark.endpoint#endpoint-cinema
   .limit.padding
     hgroup
       h3 Icelandic cinema
-      h4 Sort by movies or theaters
-  .limit.padding.wide
-    .box.light.demo
-      pre.prettyprint
-        | curl -X GET 'apis.is/cinema' -H 'Content-Type: application/json'
-      pre.prettyprint.linenums
-        | {
-        |   "results": [
-        |     {
-        |       "title": "jOBS",
-        |       "released": "2013",
-        |       "restricted": "12 ára",
-        |       "imdb": "5.5/10  9,907 atkv.",
-        |       "image": "http://kvikmyndir.is/images/poster/8497_500.jpg",
-        |       "showtimes": [
-        |         {
-        |           "theater": "Borgarbíó",
-        |           "schedule": [
-        |             "22:00"
-        |           ]
-        |         },
-        |         {
-        |           "theater": "Laugarásbíó",
-        |           "schedule": [
-        |             "20:00",
-        |             "22:10"
-        |           ]
-        |         }
-        |       ]
-        |     }
-        |   ]
-        | }
-      pre.prettyprint
-        | curl -X GET 'apis.is/cinema/theaters' -H 'Content-Type: application/json'
-      pre.prettyprint.linenums
-        | {
-        |   "name": "Laugarásbíó",
-        |   "location": "Laugarási",
-        |   "image": "http://kvikmyndir.is/images/biohus_biosida/laugarasbio.jpg",
-        |   "movies": [
-        |     {
-        |       "title": "Despicable Me 2",
-        |       "schedule": [
-        |         "16:00 (2D )",
-        |         "16:00 (3D )",
-        |         "18:00 (3D )",
-        |         "18:00 (2D )",
-        |         "20:00 (2D )"
-        |       ]
-        |     },
-        |     {
-        |       "title": "jOBS",
-        |       "schedule": [
-        |         "20:00",
-        |         "22:10"
-        |       ]
-        |     }
-        |   ]
-        | },
+      h4 Source: <a href="http://kvikmyndir.is/bio/syningatimar/" target="_blank">kvikmyndir.is</a>
+
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/cinema", target="_blank") /cinema
+
+      .content
+        p Get a list of showtimes in icelandic movie theaters; sort by movies
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/cinema' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "title": "jOBS",
+                "released": "2013",
+                "restricted": "12 ára",
+                "imdb": "5.5/10  9,907 atkv.",
+                "image": "http://kvikmyndir.is/images/poster/8497_500.jpg",
+                "showtimes": [
+                  {
+                    "theater": "Borgarbíó",
+                    "schedule": [
+                      "22:00"
+                    ]
+                  },
+                  {
+                    "theater": "Laugarásbíó",
+                    "schedule": [
+                      "20:00",
+                      "22:10"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/cinema/theaters", target="_blank") /cinema/theaters
+
+      .content
+        p Get a list of showtimes in icelandic movie theaters; sort by theater
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/cinema/theaters' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "name": "Laugarásbíó",
+            "location": "Laugarási",
+            "image": "http://kvikmyndir.is/images/biohus_biosida/laugarasbio.jpg",
+            "movies": [
+              {
+                "title": "Despicable Me 2",
+                "schedule": [
+                  "16:00 (2D )",
+                  "16:00 (3D )",
+                  "18:00 (3D )",
+                  "18:00 (2D )",
+                  "20:00 (2D )"
+                ]
+              },
+              {
+                "title": "jOBS",
+                "schedule": [
+                  "20:00",
+                  "22:10"
+                ]
+              }
+            ]
+          }

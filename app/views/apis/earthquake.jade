@@ -2,22 +2,42 @@ section.section.dark.endpoint#endpoint-earthquake
   .limit.padding
     hgroup
       h3 Eartquakes in Iceland
-      h4 Get monitoring data
-  .limit.padding.wide
-    .box.light.demo
-      pre.prettyprint
-        | curl -X GET 'apis.is/earthquake/is' -H 'Content-Type: application/json'
-      pre.prettyprint.linenums
-        | {
-        |   "results": [
-        |     {
-        |       "timestamp": "2013-09-13T22:55:57.000Z",
-        |       "latitude": 66.239,
-        |       "longitude": -16.799,
-        |       "depth": 5.3,
-        |       "size": 1.1,
-        |       "quality": 40.78,
-        |       "humanReadableLocation": "17,0 km VSV af Kópaskeri"
-        |     }
-        |   ]
-        | }
+      h4 Source: <a href="http://vedur.is" target="_blank">Icelandic Meteorological Office</a>
+
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/earthquake/is", target="_blank") /earthquake/is
+
+      .content
+        p Get earthquake monitoring data for the last 48 hours.
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/earthquake/is' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "timestamp": "2013-09-17T10:35:46.000Z",
+                "latitude": 66.181,
+                "longitude": -17.764,
+                "depth": 11.3,
+                "size": 0.9,
+                "quality": 54.02,
+                "humanReadableLocation": "3,8 km ANA af Flatey"
+              },
+              {
+                "timestamp": "2013-09-17T04:52:13.000Z",
+                "latitude": 63.684,
+                "longitude": -19.282,
+                "depth": 4.7,
+                "size": 1.7,
+                "quality": 35.9,
+                "humanReadableLocation": "5,1 km NNV af Goðabungu"
+              }
+            ]
+          }

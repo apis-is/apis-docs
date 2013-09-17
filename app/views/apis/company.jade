@@ -1,27 +1,55 @@
 section.section.dark.endpoint#endpoint-company
   .limit.padding
     hgroup
-      h3 Company
-      h4 Search icelandic company registry by name, address, social security number or VAT-number (VSK)
-  .limit.padding.wide
-    .box.light.demo
-      pre.prettyprint
-        | curl -X GET 'apis.is/company?name=hagar' -H 'Content-Type: application/json'
-      pre.prettyprint
-        | curl -X GET 'apis.is/company?address=Hagasmára' -H 'Content-Type: application/json'
-      pre.prettyprint
-        | curl -X GET 'apis.is/company?socialnumber=4307003590' -H 'Content-Type: application/json'
-      pre.prettyprint
-        | curl -X GET 'apis.is/company?vsknr=12345' -H 'Content-Type: application/json'
+      h3 Icelandic companies
+      h4 Source: <a href="http://rsk.is" target="_blank">Directorate of Internal Revenue</a> in Iceland
 
-      pre.prettyprint.linenums
-        | {
-        |     "results": [
-        |         {
-        |             "name": "Company name",
-        |             "sn": "Social security number",
-        |             "active": 1,
-        |             "address": "Address"
-        |         }
-        |     ]
-        | }
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/company?name=hagar", target="_blank") /company
+
+      .content
+        p Search the icelandic company registry
+        p: b NB: At least one parameter is required.
+
+        h5.leading.collapse-next.open Parameters
+        dl
+          dt name
+          dd Company name
+          dt address
+          dd Company's address
+          dt socialnumber
+          dd Company's social security number / ID number
+          dt vsknr
+          dd Company's VAT-number (VSK in icelandic)
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/company?name=hagar' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "name": "Hagar ehf (samruni)",
+                "sn": "6712962309",
+                "active": 0,
+                "address": "Skútuvogi 7, 104 Reykjavík"
+              },
+              {
+                "name": "Hagar hf.",
+                "sn": "6702032120",
+                "active": 1,
+                "address": "Hagasmára 1, 201 Kópavogur"
+              },
+              {
+                "name": "Hagar verslanir ehf",
+                "sn": "4707100390",
+                "active": 1,
+                "address": "Hagasmára 1, 201 Kópavogur"
+              }
+            ]
+          }

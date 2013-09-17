@@ -1,35 +1,47 @@
 section.section.dark.endpoint#endpoint-flight
   .limit.padding
     hgroup
-      h3 Flight
-      h4 Get list of international flights departing and arriving at KEF airport.
-  .limit.padding.wide
-    .box.light.demo
-      pre.prettyprint
-        | curl -X GET 'apis.is/flight?language=en&type=departures' -H 'Content-Type: application/json'
-      p.nb <strong>language</strong> can be "en" or "is"
-      p.nb <strong>type</strong> can be "departures" or "arrivals"
-      pre.prettyprint.linenums
-        | {
-        |     "results": [
-        |         {
-        |             "date": "26. Jan",
-        |             "flightNumber": "FI671",
-        |             "to": "Denver Intl",
-        |             "plannedArrival": "17:00",
-        |             "realArrival": "17:23",
-        |             "status": "Departed 17:12"
-        |         },
-        |         {
-        |             "date": "26. Jan",
-        |             "flightNumber": "FI615",
-        |             "to": "New York JFK",
-        |             "plannedArrival": "17:05",
-        |             "realArrival": "17:26",
-        |             "status": "Departed 17:17"
-        |         }
-        |     ]
-        | }
+      h3 International flights in Iceland
+      h4 Source: <a href="http://kefairport.is">Keflavik Airport</a>
 
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/flight?language=en&type=departures", target="_blank") /flight
+      .content
+        p Get a list of all international flights departing and arriving at <a href="http://kefairport.is" target="_blank">Keflavik Airport</a> today.
 
+        h5.leading.collapse-next.open Parameters
+        dl
+          dt.req language
+          dd 'en' or 'is'
+          dt.req type
+          dd 'departures' or 'arrivals'
 
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/flight?language=en&type=departures' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+              "results": [
+                  {
+                      "date": "26. Jan",
+                      "flightNumber": "FI671",
+                      "to": "Denver Intl",
+                      "plannedArrival": "17:00",
+                      "realArrival": "17:23",
+                      "status": "Departed 17:12"
+                  },
+                  {
+                      "date": "26. Jan",
+                      "flightNumber": "FI615",
+                      "to": "New York JFK",
+                      "plannedArrival": "17:05",
+                      "realArrival": "17:26",
+                      "status": "Departed 17:17"
+                  }
+              ]
+          }

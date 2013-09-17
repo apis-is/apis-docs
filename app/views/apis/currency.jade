@@ -1,38 +1,115 @@
 section.section.dark.endpoint#endpoint-currency
   .limit.padding
     hgroup
-      h3 Currency
-      h4 Get currency data from <a href="http://m5.is" target="_blank">m5.is</a>, <a href="http://arionbanki.is/" target="_blank">Arion banki</a> or <a href="http://landsbankinn.is" target="_blank">Landsbankinn</a>
-  .limit.padding.wide
-    .box.light.demo
-      p.nb All values are in ISK
-      pre.prettyprint
-        | curl -X GET 'apis.is/currency/m5' -H 'Content-Type: application/json'
-      pre.prettyprint
-        | curl -X GET 'apis.is/currency/arion' -H 'Content-Type: application/json'
-      pre.prettyprint
-        | curl -X GET 'apis.is/currency/lb' -H 'Content-Type: application/json'
+      h3 Currency in relation to ISK
+      h4 Sources: <a href="http://m5.is" target="_blank">M5</a>, <a href="http://arionbanki.is/" target="_blank">Arion banki</a> and <a href="http://landsbankinn.is" target="_blank">Landsbankinn</a>
 
-      pre.prettyprint.linenums
-        | {
-        |     "results": [
-        |         {
-        |             "shortName": "USD",
-        |             "longName": "Bandarískur dalur",
-        |             "value": 126.185,
-        |             "askValue": 126.56,
-        |             "bidValue": 125.81,
-        |             "changeCur": -0.0395,
-        |             "changePer": 0
-        |         },
-        |         {
-        |             "shortName": "GBP",
-        |             "longName": "Sterlingspund",
-        |             "value": 201.855,
-        |             "askValue": 202.46,
-        |             "bidValue": 201.25,
-        |             "changeCur": -0.19719,
-        |             "changePer": 0
-        |         }
-        |     ]
-        | }
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/currency/m5", target="_blank") /currency/m5
+
+      .content
+        p Get currency data from <a href="http://m5.is" target="_blank">M5</a>
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/currency/m5' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "shortName": "USD",
+                "longName": "Bandarískur dalur",
+                "value": 121.53,
+                "askValue": 0,
+                "bidValue": 0,
+                "changeCur": 0.055,
+                "changePer": 0.05
+              },
+              {
+                "shortName": "EUR",
+                "longName": "Evra",
+                "value": 162.2,
+                "askValue": 0,
+                "bidValue": 0,
+                "changeCur": 0.015,
+                "changePer": 0.01
+              }
+            ]
+          }
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/currency/arion", target="_blank") /currency/arion
+
+      .content
+        p Get currency data from <a href="http://arionbanki.is/" target="_blank">Arion banki</a>
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/currency/arion' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "shortName": "USD",
+                "longName": "Bandarískur dalur",
+                "value": 121.515,
+                "askValue": 121.88,
+                "bidValue": 121.15,
+                "changeCur": -0.40857,
+                "changePer": 0
+              },
+              {
+                "shortName": "EUR",
+                "longName": "Evra",
+                "value": 162.185,
+                "askValue": 162.67,
+                "bidValue": 161.7,
+                "changeCur": 0.09845,
+                "changePer": "0.00"
+              }
+            ]
+          }
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/currency/lb", target="_blank") /currency/lb
+
+      .content
+        p Get currency data from <a href="http://landsbankinn.is" target="_blank">Landsbankinn</a>
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/currency/lb' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "shortName": "USD",
+                "longName": "Bandaríkjadalur",
+                "value": 121.47,
+                "askValue": 121.83,
+                "bidValue": 121.11,
+                "changeCur": 0.01,
+                "changePer": 0
+              },
+              {
+                "shortName": "EUR",
+                "longName": "Evra",
+                "value": 162.3,
+                "askValue": 162.78,
+                "bidValue": 161.82,
+                "changeCur": 0.09,
+                "changePer": 0
+              }
+            ]
+          }

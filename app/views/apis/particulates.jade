@@ -1,0 +1,43 @@
+section.section.dark.endpoint#endpoint-particulates
+  .limit.padding
+    hgroup
+      h3 Particulates in Reykjavik
+      h4 Sources: <a href="http://reykjavik.is" target="_blank">Reykjavik City</a>
+
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/particulates", target="_blank") /particulates
+
+      .content
+        p Get current status of <a href="https://en.wikipedia.org/wiki/Particulates" target="_blank">particulates</a> in <a href="http://reykjavik.is" target="_blank">Reykjavik City</a>
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/particulates' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/particulates',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "PM10nuna": "0",
+                "PM10medaltal": "9.1",
+                "Counter": "29",
+                "Dags": "2013-09-18",
+                "nanariuppl": "http://www.rvk.is/desktopdefault.aspx/tabid-1007"
+              }
+            ]
+          }

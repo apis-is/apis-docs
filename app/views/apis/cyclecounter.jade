@@ -1,0 +1,44 @@
+section.section.dark.endpoint#endpoint-cyclecounter
+  .limit.padding
+    hgroup
+      h3 Cyclecounter in Reykjavik
+      h4 Sources: <a href="http://bicyclecounter.dk" target="_blank">Bicycle Counter</a>
+
+  .limit.padding
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/cyclecounter", target="_blank") /cyclecounter
+
+      .content
+        p.
+          Get current status of bicycle counters in Iceland, currently only one
+          located by Sudurlandsbraut in Reykjavik.
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/cyclecounter' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/cyclecounter',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "DayCount": "154",
+                "YearCount": "31853",
+                "Time": "16:48",
+                "Date": "18. Sep 2013"
+              }
+            ]
+          }

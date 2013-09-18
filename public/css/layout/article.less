@@ -1,0 +1,39 @@
+
+.offset {
+  clear: both;
+  display: block;
+  height: 1px;
+  position: relative;
+  top: -1px;
+  padding-bottom: @nav-height + 5;
+
+  @media @break-mobile {
+    padding-bottom: 0;
+  }
+
+  + .section,
+  + .article {
+    margin-top: -6px;
+  }
+}
+
+.article {
+  .clearfix();
+  margin: 0 auto;
+  padding-top: @spacing;
+  // padding-bottom: @spacing;
+  position: relative;
+
+
+  &.dark {
+    background: @color-dark;
+  }
+
+  &.light {
+    background: @color-light;
+  }
+
+  &.white {
+    background: @color-white;
+  }
+}

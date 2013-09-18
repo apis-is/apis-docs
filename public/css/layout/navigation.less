@@ -1,0 +1,138 @@
+// navigation.less
+
+.nav {
+
+  &.top {
+    .transition(top @trans-med);
+    margin: 0 auto;
+    width: 100%;
+    height: @nav-height;
+
+    position: fixed;
+    top: -@nav-height - 5;
+    left: 0;
+    right: 0;
+    z-index: 990;
+
+    -webkit-font-smoothing: antialiased;
+
+    background: @color-light;
+
+    border-bottom: 1px solid @color-primary;
+
+    &.show {
+      // position: fixed;
+      top: 0;
+    }
+
+    @media @break-mobile {
+      display: none;
+    }
+
+    >ul {
+      .reset-list();
+      margin: 0;
+      padding: 0;
+
+      text-align: right;
+      font-size: 13px;
+
+      >li {
+        cursor: default;
+        display: inline-block;
+        position: relative;
+        line-height: @nav-height;
+
+        color: @color-dark;
+
+        >a {
+          cursor: pointer;
+          display: block;
+          padding: 0 15px;
+          border: none;
+
+          &.no-link {
+            cursor: default;
+            // color: @color-dark;
+          }
+
+          >icon {
+            font-size: 10px;
+            padding-left: 6px;
+          }
+        }
+
+        ul {
+          .transition(opacity 150ms);
+          .reset-list();
+
+          opacity: 0;
+          visibility: hidden;
+
+          margin: 0;
+          padding: 0;
+
+          position: absolute;
+          top: 100%;
+          right: 0;
+          z-index: 11;
+
+          border-left: 1px solid @color-primary;
+          border-bottom: 1px solid @color-primary;
+
+          >li {
+            line-height: 23px;
+            text-align: left;
+
+            &:first-child {
+              margin-top: 0;
+            }
+
+            >a {
+              display: block;
+              white-space: nowrap;
+              padding: 0 @spacing*.5;
+              line-height: @nav-height*.75;
+              font-weight: normal;
+
+              background: @color-dark;
+
+              border-top: 1px solid @color-dark;
+
+              &:hover {
+                background: lighten(@color-dark,5%);
+                border-top: 1px solid @color-primary;
+              }
+            }
+
+            &:last-child a {
+              border-bottom: 0;
+            }
+          }
+        }
+
+        &:hover {
+          .transition(background-color 150ms);
+          background: @color-dark;
+
+          >ul {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        &:first-child {
+          float: left;
+
+          &:hover {
+            background: none;
+          }
+
+          >a {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}

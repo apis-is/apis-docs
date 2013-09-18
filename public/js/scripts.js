@@ -25,6 +25,8 @@ prettyPrint();
       this.doScrollfix = false;
 
       this.sectionEls = this.processSections();
+      this.apisEls = this.processArticles();
+      this.generateNav();
       this.attachEvents();
 
       $(window).resize($.proxy(this.onResize,this)).resize();
@@ -49,6 +51,13 @@ prettyPrint();
 
         return false;
       },this));
+
+      $('.arrows, .arrows > icon').on('click',$.proxy(function(e){
+        this.goToAnchor('#about');
+
+        e.preventDefault();
+        return false;
+      },this))
 
       $('.collapse-next:not(.open)').next().hide();
       $('.collapse-next').on('click',$.proxy(function(e){
@@ -75,6 +84,32 @@ prettyPrint();
         window.location.hash = anchor;
       }
 
+    },
+
+    generateNav: function(){
+      this.$navEl = $('#nav');
+
+      $.each(this.apisEls,$.proxy(function(index,api){
+        this.$navEl.find('ul.endpoints').append(
+          $('<li/>').append(
+            $('<a/>')
+              .attr('href','#'+api.id)
+              .text(api.title)
+          )
+        );
+      },this))
+    },
+
+    processArticles: function(){
+      var apis = [];
+      $('[id*="endpoint-"]').each(function(index,api){
+        apis.push({
+          id: $(api).attr('id'),
+          title: $(api).next('article').find('h3:first').text()
+        });
+      })
+
+      return apis;
     },
 
     processSections: function(){
@@ -117,6 +152,18 @@ prettyPrint();
     },
 
     onScroll: function(){
+      if(!this.browser.touch) {
+        $inner = $('.site-header').find('.inner')
+
+        if($(window).scrollTop() >= $('#about').offset().top) {
+          if(!this.$navEl.hasClass('show')) this.$navEl.addClass('show')
+          if($inner.hasClass('fixed')) $inner.removeClass('fixed');
+        } else {
+          if(this.$navEl.hasClass('show')) this.$navEl.removeClass('show');
+          if(!$inner.hasClass('fixed')) $inner.addClass('fixed')
+        }
+      }
+
       if(this.doScrollfix !== false);
         clearTimeout(this.doScrollfix);
       this.doScrollfix = setTimeout($.proxy(this.scrollFix,this), 200);
@@ -142,8 +189,8 @@ prettyPrint();
     getBrowserInformation: function(){
       var browser = {};
       browser.isLegacy = !$('html').hasClass('lt-ie9');
-      browser.touch = !$("html").hasClass("no-touch");
-      browser.cssAnim = !$("html").hasClass("no-cssanimations") && !$("html").hasClass("no-csstransitions");
+      browser.touch = $("html").hasClass("touch");
+      browser.cssAnim = $("html").hasClass("cssanimations") && !$("html").hasClass("csstransitions");
 
       var agent = window.navigator.userAgent;
       var android = agent.indexOf('Android ');

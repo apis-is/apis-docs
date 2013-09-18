@@ -31,14 +31,21 @@
     margin: auto;
     height: 400px;
 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 
+    &.fixed {
+      position: fixed;
+    }
+
     .arrows {
+      cursor: pointer;
+      display: block;
       margin: 0 auto @spacing;
+      border: none;
 
       >icon {
         .animation(fadeloop ease-in 2);

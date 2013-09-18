@@ -2,21 +2,18 @@
 .section {
   .clearfix();
   margin: 0 auto;
+  position: relative;
 
   + .section {
     border-top: 1px solid @color-primary;
-    padding-top: @spacing*2;
-    padding-bottom: @spacing;
 
     &.light {
       border-top-color: @color-dark;
     }
   }
 
-  .site-content &:first-child {
+  .site-content > &:first-child {
     border-top: 2px solid @color-primary;
-    padding-top: @spacing*2;
-    padding-bottom: @spacing;
   }
 
   &.dark {
@@ -24,6 +21,9 @@
   }
 
   &.light {
+    padding-top: @spacing;
+    padding-bottom: @spacing;
+
     background: @color-light;
   }
 

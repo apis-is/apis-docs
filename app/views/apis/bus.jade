@@ -20,7 +20,19 @@ section.section.dark.endpoint#endpoint-bus
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/bus/realtime?busses=1,5' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/bus/realtime?busses=1,5' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/bus/realtime',
+            'type': 'GET',
+            'dataType': 'json',
+            'data': {'busses': '1,5'},
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.

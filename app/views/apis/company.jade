@@ -27,7 +27,19 @@ section.section.dark.endpoint#endpoint-company
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/company?name=hagar' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/company?name=hagar' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/company',
+            'type': 'GET',
+            'dataType': 'json',
+            'data': {'name': 'hagar'},
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.

@@ -15,7 +15,18 @@ section.section.dark.endpoint#endpoint-lottery
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/lottery' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/lottery' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/lottery',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.
@@ -48,7 +59,18 @@ section.section.dark.endpoint#endpoint-lottery
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/lottery/vikingalotto' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/lottery/vikingalotto' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/lottery/vikingalotto',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.
@@ -81,7 +103,18 @@ section.section.dark.endpoint#endpoint-lottery
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/lottery/eurojackpot' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/lottery/eurojackpot' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/lottery/eurojackpot',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.

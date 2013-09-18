@@ -93,7 +93,19 @@ section.section.dark.endpoint#endpoint-weather
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/weather/forecasts/en/?stations=1,422' -H 'Content-Type: applucation/json'
+          curl -X GET 'apis.is/weather/forecasts/en/?stations=1,422' -H 'accept-version:1' -H 'Content-Type: applucation/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/weather/forecasts/en',
+            'type': 'GET',
+            'dataType': 'json',
+            'data': {'stations': '1,422'},
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.
@@ -762,7 +774,19 @@ section.section.dark.endpoint#endpoint-weather
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/weather/observations/en?stations=1,422&time=1h&anytime=0' -H 'Content-Type: applucation/json'
+          curl -X GET 'apis.is/weather/observations/en?stations=1,422&time=1h&anytime=0' -H 'accept-version:1' -H 'Content-Type: applucation/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/weather/observations/en',
+            'type': 'GET',
+            'dataType': 'json',
+            'data': {'stations': '1,422', 'time': '1h', 'anytime': '0'},
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.
@@ -857,7 +881,19 @@ section.section.dark.endpoint#endpoint-weather
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/weather/texts?types=5,6' -H 'Content-Type: applucation/json'
+          curl -X GET 'apis.is/weather/texts?types=5,6' -H 'accept-version:1' -H 'Content-Type: applucation/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/weather/texts',
+            'type': 'GET',
+            'dataType': 'json',
+            'data': {'types': '5,6'},
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.

@@ -15,7 +15,18 @@ section.section.dark.endpoint#endpoint-currency
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/currency/m5' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/currency/m5' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/currency/m5',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.
@@ -51,7 +62,18 @@ section.section.dark.endpoint#endpoint-currency
         p Get currency data from <a href="http://arionbanki.is/" target="_blank">Arion banki</a>
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/currency/arion' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/currency/arion' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/currency/arion',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.
@@ -87,7 +109,18 @@ section.section.dark.endpoint#endpoint-currency
         p Get currency data from <a href="http://landsbankinn.is" target="_blank">Landsbankinn</a>
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/currency/lb' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/currency/lb' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/currency/lb',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.

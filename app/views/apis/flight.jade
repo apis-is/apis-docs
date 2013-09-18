@@ -21,7 +21,19 @@ section.section.dark.endpoint#endpoint-flight
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/flight?language=en&type=departures' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/flight?language=en&type=departures' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/flight',
+            'type': 'GET',
+            'dataType': 'json',
+            'data': {'language': 'en', 'type': 'departures'},
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.

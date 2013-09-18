@@ -15,7 +15,18 @@ section.section.dark.endpoint#endpoint-cinema
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/cinema' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/cinema' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/cinema',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.
@@ -56,7 +67,18 @@ section.section.dark.endpoint#endpoint-cinema
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/cinema/theaters' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/cinema/theaters' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/cinema/theaters',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
 
         h5.leading.collapse-next Response
         pre.prettyprint.linenums.response.

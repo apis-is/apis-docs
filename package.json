@@ -25,10 +25,11 @@
   },
   "devDependencies": {
     "node-notifier": "~1.0.0-beta",
-    "reload": "0.0.2"
+    "reload": "0.0.2",
+    "supervisor": "~0.5.6"
   },
   "scripts": {
-    "start": "supervisor -e 'less|jade|js|json' app.js"
+    "start": "supervisor -n error -e 'less|jade|js|json' app.js"
   },
   "license": "MIT",
   "engines": {

@@ -4,6 +4,8 @@ This repository holds documentation for the [APIs.is project](https://github.com
 
 Since you're here (and still reading), you probably already know what this is all about, and ready to get down to business, but in order to simplify all our lives check out these few pointers.
 
+[![Build Status](https://travis-ci.org/kristjanmik/apis-docs.png?branch=master)](https://travis-ci.org/kristjanmik/apis-docs)
+
 ## Getting started
 
 First of all, this is running on a pretty simple node server using [jade](http://jade-lang.com/) for templating and [less](http://lesscss.org/) for styles. To get it up and running, simply clone this repo to your local directory, install packages and start the app.

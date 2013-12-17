@@ -1,0 +1,76 @@
+.offset#endpoint-skiresort
+article.article.dark.endpoint
+  .limit.padding
+    hgroup
+      h3 Ski resorts in Iceland
+      h4 Sources: <a href="http://www.skidasvaedi.is/">Skíðasvæðin</a>, <a href="http://www.hlidarfjall.is">Hlíðarfjall</a>, <a href="http://www.oddsskard.is/">Skíðamiðstöð Austurlands</a> and <a href="http://www.skardsdalur.is/">Skíðasvæðið Skarðsdal</a>
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/skiresorts", target="_blank") /skiresorts
+      .content
+        p Get open/closed status of ski slopes in Icelandic ski resorts.
+
+        h5.leading.collapse-next.open Parameters
+        dl
+          dt.req area
+          dd Name of area.
+
+
+        h5.leading.collapse-next Supported areas
+        pre.prettyprint.
+          "reykjavik" = "Ski resorts in the Reykjavík area"
+          "akureyri"  = "Ski resorts in the Akureyri area"
+          "fjardarbyggd" = "Ski resorts in Fjarðarbyggð"
+          "siglufjordur" = "Ski resorts in Siglufjörður"
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/skiresorts?area=reykjavik' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/skiresorts',
+            'type': 'GET',
+            'dataType': 'json',
+            'data': {'area': 'reykjavik'}
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "area": "Siglufjörður",
+                "resorts": [
+                  {
+                  "name": "Skarðsdalur",
+                  "webcam": "http://157.157.79.85:8080/view/index.shtml",
+                  "slopes": [
+                    {
+                      "name": "Búngu-lyfta",
+                      "open": false
+                    },
+                    {
+                      "name": "Háls-lyfta",
+                      "open": false
+                    },
+                    {
+                      "name": "Neðsta-lyfta",
+                      "open": false
+                    },
+                    {
+                      "name": "T-lyfta",
+                      "open": false
+                    }
+                  ]
+                  }
+                ]
+              }
+            ]
+          }

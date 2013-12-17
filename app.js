@@ -41,6 +41,7 @@ if(env == 'development'){
 server.listen(settings.port, function(){
   logo.long();
   console.log(" Express server is listening on "+" port %d ".highlight.info + " in " + " %s mode ".highlight.data, settings.port, env);
+  /*
   if (env == 'development') {
     notifier.notify({
         title: pkg.name,
@@ -48,4 +49,5 @@ server.listen(settings.port, function(){
         message: 'Successfully started on port ' + settings.port
     });
   }
+  */
 });

@@ -47,4 +47,5 @@ server.listen(settings.port, function(){
         subtitle: 'v' + pkg.version,
         message: 'Successfully started on port ' + settings.port
     });
+  }
 });

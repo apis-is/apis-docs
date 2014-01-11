@@ -1,0 +1,67 @@
+.offset#endpoint-cinema
+article.article.dark.endpoint
+  .limit.padding
+    hgroup
+      h3 Concerts in Iceland
+      h4 Source: <a href="http://midi.is/atburdir/?c=1&p=1" target="_blank">midi.is</a>
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/concerts", target="_blank") /concerts
+
+      .content
+        p Get a list of all the concerts in Iceland sorted by date
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/concerts' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/concerts',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results" : [
+              {
+                "date": "Laugardagur, 12. júlí 2014",
+                "concerts": [
+                  {
+                    "title":"All Tomorrow's Parties Iceland",
+                    "info":"Day pass - Saturday - w/bus transfers",
+                    "date":"12.07.2014 kl 17:00",
+                    "location":"Ásbrú",
+                    "type":"Tónleikar"
+                  },
+                  {
+                    "title":"All Tomorrow's Parties Iceland",
+                    "info":"Day pass - Saturday",
+                    "date":"12.07.2014 kl. 19:00",
+                    "location":"Ásbrú",
+                    "type":"Tónleikar"
+                  }
+                ]
+              },
+              {
+                "date":"Miðvikudagur, 5. nóvember 2014",
+                "concerts":[
+                  {
+                    "title":"Iceland Airwaves 2014",
+                    "info":"November 5th - November 9th",
+                    "date":"05.11.2014 kl. 18:00",
+                    "location":"Reykjavík",
+                    "type":"Tónleikar"
+                  }
+                ]
+              }
+            ]
+          }

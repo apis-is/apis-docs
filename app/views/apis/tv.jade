@@ -3,7 +3,7 @@ article.article.dark.endpoint
   .limit.padding
     hgroup
       h3 Icelandic television programming
-      h4 Source: <a href="http://ruv.is/" target="_blank">RÚV</a> and <a href="http://stod2.is/" target="_blank">Stöð 2</a>
+      h4 Source: <a href="http://ruv.is/" target="_blank">RÚV</a>, <a href="http://stod2.is/" target="_blank">Stöð 2</a> and <a href="http://www.skjarinn.is/einn/">Skjár 1</a>
 
     .box.light.api
       .content.title.blue
@@ -117,6 +117,65 @@ article.article.dark.endpoint
                 "series": {
                   "episode": "",
                   "series": ""
+                }
+              }
+            ]
+          }
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/tv/skjar1", target="_blank") /tv/skjar1
+
+      .content
+        p Get today's schedule from Skjár 1
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/tv/skjar1' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/tv/skjar1',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "title": "Leverage",
+                "originalTitle": "Leverage 5",
+                "duration": "00:46:00",
+                "description": "\u00deetta er fimmta \u00fe\u00e1ttar\u00f6\u00f0in af Leverage, \u00e6sispennandi \u00fe\u00e1ttar\u00f6\u00f0 \u00ed anda Ocean\u2019s Eleven um \u00fej\u00f3fah\u00f3p sem r\u00e6nir \u00fe\u00e1 sem misnota vald sitt og r\u00edkid\u00e6mi og n\u00ed\u00f0ast \u00e1 minnim\u00e1ttar.",
+                "shortDescription": "Nate ver\u00f0ur a\u00f0 hreinsa mannor\u00f0 Sophie \u00feegar h\u00fan er grunu\u00f0 um \u00fej\u00f3fna\u00f0 \u00e1 \u00f3metanlegu m\u00e1lverki.",
+                "live": false,
+                "premier": true,
+                "startTime": "2014-07-09 23:54",
+                "aspectRatio": "",
+                "series": {
+                  "episode": "10",
+                  "series": "15"
+                }
+              },
+              {
+                "title": "House of Lies",
+                "originalTitle": "House of Lies 2",
+                "duration": "00:28:00",
+                "description": "Marty Khan og f\u00e9lagar sn\u00faa aftur \u00ed \u00feessum vins\u00e6lu \u00fe\u00e1ttum sem hinir raunverulegu h\u00e1karlar vi\u00f0skiptal\u00edfsins.",
+                "shortDescription": "",
+                "live": false,
+                "premier": true,
+                "startTime": "2014-07-10 00:40",
+                "aspectRatio": "",
+                "series": {
+                  "episode": "4",
+                  "series": "12"
                 }
               }
             ]

@@ -1,9 +1,10 @@
 // -- Module dependencies.
-var express     = require('express'),
-    http        = require('http'),
-    less        = require('less'),
-    colors      = require('colors'),
-    logo        = require('./config/logo.js');
+var express      = require('express'),
+    http         = require('http'),
+    less         = require('less'),
+    colors       = require('colors'),
+    logo         = require('./config/logo.js'),
+    notification = require('node-notifier');
 
     colors.setTheme({
       info: 'green',
@@ -42,6 +43,7 @@ server.listen(settings.port, function(){
   logo.long();
   console.log(" Express server is listening on "+" port %d ".highlight.info + " in " + " %s mode ".highlight.data, settings.port, env);
   if (env == 'development') {
+    var notifier = new notification();
     notifier.notify({
         title: pkg.name,
         subtitle: 'v' + pkg.version,

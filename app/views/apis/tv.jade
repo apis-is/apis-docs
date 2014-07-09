@@ -1,0 +1,123 @@
+.offset#endpoint-tv
+article.article.dark.endpoint
+  .limit.padding
+    hgroup
+      h3 Icelandic television programming
+      h4 Source: <a href="http://ruv.is/" target="_blank">RÚV</a> and <a href="http://stod2.is/" target="_blank">Stöð 2</a>
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/tv/ruv", target="_blank") /tv/ruv
+
+      .content
+        p Get today's schedule from RÚV
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/tv/ruv' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/tv/ruv',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "title": "Morgunstundin okkar",
+                "originalTitle": "",
+                "duration": "03:25:00",
+                "description": "",
+                "shortDescription": "",
+                "live": false,
+                "premier": true,
+                "startTime": "2014-07-05 07:00:00",
+                "aspectRatio": "16:9",
+                "series": {
+                  "episode": "1",
+                  "series": "1"
+                }
+              },
+              {
+                "title": "Sm\u00e6lki",
+                "originalTitle": "Small Potatoes",
+                "duration": "00:03:00",
+                "description": "",
+                "shortDescription": "",
+                "live": false,
+                "premier": true,
+                "startTime": "2014-07-05 07:01:00",
+                "aspectRatio": "16:9",
+                "series": {
+                  "episode": "24",
+                  "series": "26"
+                }
+              }
+            ]
+          }
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/tv/stod2", target="_blank") /tv/stod2
+
+      .content
+        p Get today's schedule from Stöð 2
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/tv/stod2' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/tv/stod2',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "title": "ET Weekend",
+                "originalTitle": "",
+                "duration": "0:45",
+                "description": "Fremsti og fr\u00e6gasti \u00fe\u00e1ttur \u00ed heimi \u00fear sem allt \u00fea\u00f0 helsta sem ger\u00f0ist \u00ed vikunni \u00ed heimi f\u00edna og fr\u00e6ga f\u00f3lksins er t\u00edunda\u00f0 \u00e1 hressilegan h\u00e1tt.",
+                "live": "false",
+                "premier": "false",
+                "startTime": "2014-07-06 04:40:00",
+                "aspectRatio": "16\/9",
+                "series": {
+                  "episode": "42",
+                  "series": "52"
+                }
+              },
+              {
+                "title": "Fr\u00e9ttir",
+                "originalTitle": "",
+                "duration": "0:45",
+                "description": "Fr\u00e9ttir St\u00f6\u00f0var 2 endurs\u00fdndar fr\u00e1 \u00fev\u00ed fyrr \u00ed kv\u00f6ld.",
+                "live": "false",
+                "premier": "true",
+                "startTime": "2014-07-06 05:25:00",
+                "aspectRatio": "4\/3",
+                "series": {
+                  "episode": "",
+                  "series": ""
+                }
+              }
+            ]
+          }

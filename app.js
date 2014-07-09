@@ -3,8 +3,7 @@ var express      = require('express'),
     http         = require('http'),
     less         = require('less'),
     colors       = require('colors'),
-    logo         = require('./config/logo.js'),
-    notification = require('node-notifier');
+    logo         = require('./config/logo.js');
 
     colors.setTheme({
       info: 'green',
@@ -43,7 +42,7 @@ server.listen(settings.port, function(){
   logo.long();
   console.log(" Express server is listening on "+" port %d ".highlight.info + " in " + " %s mode ".highlight.data, settings.port, env);
   if (env == 'development') {
-    var notifier = new notification();
+    notifier = new notifier();
     notifier.notify({
         title: pkg.name,
         subtitle: 'v' + pkg.version,

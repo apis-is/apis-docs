@@ -24,7 +24,7 @@
     "colors": "~0.6.2"
   },
   "devDependencies": {
-    "node-notifier": "~1.0.0-beta",
+    "node-notifier": "3.0.6",
     "reload": "0.0.2",
     "supervisor": "~0.5.6"
   },

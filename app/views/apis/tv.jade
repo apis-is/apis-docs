@@ -2,8 +2,42 @@
 article.article.dark.endpoint
   .limit.padding
     hgroup
-      h3 Icelandic television schedule
+      h3 Icelandic television schedules
       h4 Source: <a href="http://ruv.is/" target="_blank">RÚV</a>, <a href="http://stod2.is/" target="_blank">Stöð 2</a> and <a href="http://www.skjarinn.is/einn/">Skjár 1</a>
+    
+    .box.light.api
+      .content.title
+        .method get
+        .path /tv/:channel
+
+      .content
+        p Get schedules for icelandic tv stations.
+
+        h5.leading.collapse-next.open Parameter
+        dl
+          dt.req /:channel
+          dd Which channel's schedule to get
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "info": "This is an api for Icelandic tv channel schedules",
+                "endpoints": {
+                  "ruv": "/tv/ruv/",
+                  "ruvithrottir": "/tv/ruvithrottir/",
+                  "stod2": "/tv/stod2/",
+                  "stod2sport": "/tv/stod2sport",
+                  "stod2sport2": "/tv/stod2sport2",
+                  "stod2gull": "/tv/stod2gull",
+                  "stod2bio": "/tv/stod2bio",
+                  "stod3": "/tv/stod3",
+                  "skjar1": "/tv/skjar1"
+                }
+              }
+            ]
+          }
 
     .box.light.api
       .content.title.blue
@@ -358,7 +392,7 @@ article.article.dark.endpoint
               }
             ]
           }
-          
+
     .box.light.api
       .content.title.blue
         .method get

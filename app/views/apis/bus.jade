@@ -11,16 +11,16 @@ article.article.dark.endpoint
         .path: a(href="http://apis.is/bus/realtime", target="_blank") /bus/realtime
 
       .content
-        p Real-time location of buses. Results are only shown for active buses.
+        p Real-time location of busses. Results are only shown for active busses.
 
         h5.leading.collapse-next.open Parameters
         dl
-          dt buses
-          dd Comma seperated list of numbers. <b>Good to know:</b> If not declared, the endpoint will return location of all available buses.
+          dt busses
+          dd Comma seperated list of numbers. <b>Good to know:</b> If not declared, the endpoint will return location of all available busses.
 
         h5.leading.collapse-next curl demo
         pre.prettyprint.curl-demo.
-          curl -X GET 'apis.is/bus/realtime?buses=1,5' -H 'accept-version:1' -H 'Content-Type: application/json'
+          curl -X GET 'apis.is/bus/realtime?busses=1,5' -H 'accept-version:1' -H 'Content-Type: application/json'
 
         h5.leading.collapse-next jQuery demo
         pre.prettyprint.linenums.jquery-demo.
@@ -28,7 +28,7 @@ article.article.dark.endpoint
             'url': 'http://apis.is/bus/realtime',
             'type': 'GET',
             'dataType': 'json',
-            'data': {'buses': '1,5'},
+            'data': {'busses': '1,5'},
             'success': function(response) {
               console.log(response);
             }
@@ -40,7 +40,7 @@ article.article.dark.endpoint
               "results": [
                   {
                       "busNr": "1",
-                      "buses": [
+                      "busses": [
                           {
                               "unixTime": 1354618575,
                               "x": 64.090668,
@@ -59,7 +59,7 @@ article.article.dark.endpoint
                   },
                   {
                       "busNr": "5",
-                      "buses": [
+                      "busses": [
                           {
                               "unixTime": 1354618563,
                               "x": 64.135644,

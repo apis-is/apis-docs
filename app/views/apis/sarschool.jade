@@ -1,0 +1,33 @@
+.offset#endpoint-sarschool
+article.article.dark.endpoint
+  .limit.padding
+    hgroup
+      h3 Landsbjörg SAR School course schedule
+      h4 Source: <a href="http://skoli.landsbjorg.is" target="_blank">SAR School</a>
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/sarschool", target="_blank") /sarschool
+
+      .content
+        p Get a list of all courses scheduled by the Search and Rescue school for training of SAR Squad members.
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/sarschool' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/sarschool',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {"results":[{"id":3389,"name":"Fjallabjörgun grunnnámskeið","time_start":"2014-08-29","time_end":"2014-09-01","sar_members_only":0,"host":"Squad","location":"Grindavík","price_regular":54000,"price_members":21600,"link":"http://skoli.landsbjorg.is/Open/Course.aspx?Id=3389"}]}

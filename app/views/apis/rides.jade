@@ -1,0 +1,80 @@
+.offset#endpoint-rides
+article.article.dark.endpoint
+  .limit.padding
+    hgroup
+      h3 Carpooling
+      h4 Source: <a href="http://www.samferda.net/" target="_blank">Samferda.net</a>
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/rides/samferda-drivers/", target="_blank") /rides/samferda-drivers
+
+      .content
+        p Get a list of drivers requesting passengers, sorted by departure date.
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/rides/samferda-drivers/' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/rides/samferda-drivers/',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "link": "http://www.samferda.net/en/detail/12345",
+                "from": "Akureyri",
+                "to":   "Reykjavík",
+                "date": "30.10.2014",
+                "time": "After 14:30"
+              }
+            ]
+          }
+
+    .box.light.api
+      .content.title.blue
+        .method get
+        .path: a(href="http://apis.is/rides/samferda-passengers/", target="_blank") /rides/samferda-passengers
+
+      .content
+        p Get a list of passengers requesting rides, sorted by preferred departure date
+
+        h5.leading.collapse-next curl demo
+        pre.prettyprint.curl-demo.
+          curl -X GET 'apis.is/rides/samferda-passengers/' -H 'accept-version:1' -H 'Content-Type: application/json'
+
+        h5.leading.collapse-next jQuery demo
+        pre.prettyprint.linenums.jquery-demo.
+          $.ajax({
+            'url': 'http://apis.is/rides/samferda-passengers/',
+            'type': 'GET',
+            'dataType': 'json',
+            'success': function(response) {
+              console.log(response);
+            }
+          });
+
+        h5.leading.collapse-next Response
+        pre.prettyprint.linenums.response.
+          {
+            "results": [
+              {
+                "link": "http://www.samferda.net/en/detail/54321",
+                "to":   "Reykjavík",
+                "from": "Akureyri",
+                "date": "30.10.2014",
+                "time": "Any"
+              }
+            ]
+          }

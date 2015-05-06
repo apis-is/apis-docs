@@ -1,0 +1,51 @@
+.offset#endpoint-hljomaholl
+article.article.dark.endpoint
+    .limit.padding
+        hgroup
+            h3 Hljómahöll - Concert hall in Reykjanesbær
+            h4 Source: <a href="http://hljomaholl.is">Hljómahöll</a>
+        .box.light.api
+            .content.title.blue
+                .method get
+                .path: a(href="http://apis.is/hljomaholl", target="_blank") /hljomaholl
+            .content
+                p Get a list of upcoming events at Hljómahöllin
+                h5.leading.collapse-next curl demo
+                pre.prettyprint.curl-demo.
+                    curl -X GET 'apis.is/hljomaholl' -H 'accept-version:1' -H 'Content-Type: application/json'
+                h5.leading.collapse-next jQuery demo
+                pre.prettyprint.linenums.jquery-demo.
+                    $.ajax({
+                      'url': 'http://apis.is/hljomaholl',
+                      'type': 'GET',
+                      'dataType': 'json',
+                      'success': function(response) {
+                        console.log(response);
+                      }
+                    });
+                h5.leading.collapse-next Response
+                pre.prettyprint.linenums.response.
+                    {
+                        "results": [
+                            {
+                                "date": "laugardagur  2. maí",
+                                "time": "23:30",
+                                "image":"http://www.hljomaholl.is/sites/default/files/styles/medium/public/screen_shot_2015-04-29_at_14.23.59_0.png?itok=HWO_yAA8",
+                                "title":"Karlakór Keflavíkur",
+                                "description":"Vortónleikar Karlakórs Keflavíkur verða í Stapa ( Hljómahöll )Reykjanesbæ  mánudaginn 4. maí og miðvikudaginn 6. maí.",
+                                "location":"Stapi",
+                                "buyTicketURL":false,
+                                "moreInfoURL":"http://www.hljomaholl.is/karlakor-keflavikur"
+                            },
+                            {
+                                "date": "laugardagur  2. maí",
+                                "time": "23:30",
+                                "image":"http://www.hljomaholl.is/sites/default/files/styles/medium/public/screen_shot_2015-04-22_at_12.03.39.png?itok=yuiuZkp1",
+                                "title":"Brúðkaup Fígarós",
+                                "description":"Óperufélagið Norðuróp Í samvinnu við Tónlistarskóla Reykjanesbæjar og Hljómahöll í Reykjanesbæ, setur upp gamanóperuna „Brúðkaup Fígarós“ eftir Wolfgang Amadeus Mozart við texta Lorenzo da Ponte.",
+                                "location":"Berg",
+                                "buyTicketURL":"https://www.tix.is/is/event/663/",
+                                "moreInfoURL":"http://www.hljomaholl.is/brudkaup-figaros"
+                            }
+                        ]
+                    }

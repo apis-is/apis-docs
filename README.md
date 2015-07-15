@@ -22,7 +22,7 @@ If you prefer to start it up without supervisor, simply use the good old
 $ node app.js
 ```
 
-## What files to edit
+## What files to edit:
 
 Assuming you're planning to either update current documentation or adding documentation for a new endpoint, you'll need to know that each endpoint has an individual [jade](http://jade-lang.com/) file within `./app/views/apis/` which is included into `./app/views/home.jade`.
 
